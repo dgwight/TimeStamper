@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "878B2A401CA5DDFE0077C290"
-               BuildableName = "Patient Timestamper.app"
-               BlueprintName = "Patient Timestamper"
-               ReferencedContainer = "container:Patient Timestamper.xcodeproj">
+               BuildableName = "Timestamp.app"
+               BlueprintName = "Timestamp"
+               ReferencedContainer = "container:Timestamp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "878B2A401CA5DDFE0077C290"
-            BuildableName = "Patient Timestamper.app"
-            BlueprintName = "Patient Timestamper"
-            ReferencedContainer = "container:Patient Timestamper.xcodeproj">
+            BuildableName = "Timestamp.app"
+            BlueprintName = "Timestamp"
+            ReferencedContainer = "container:Timestamp.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "878B2A401CA5DDFE0077C290"
-            BuildableName = "Patient Timestamper.app"
-            BlueprintName = "Patient Timestamper"
-            ReferencedContainer = "container:Patient Timestamper.xcodeproj">
+            BuildableName = "Timestamp.app"
+            BlueprintName = "Timestamp"
+            ReferencedContainer = "container:Timestamp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "878B2A401CA5DDFE0077C290"
-            BuildableName = "Patient Timestamper.app"
-            BlueprintName = "Patient Timestamper"
-            ReferencedContainer = "container:Patient Timestamper.xcodeproj">
+            BuildableName = "Timestamp.app"
+            BlueprintName = "Timestamp"
+            ReferencedContainer = "container:Timestamp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

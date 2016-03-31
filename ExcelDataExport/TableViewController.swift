@@ -22,7 +22,6 @@ class TableViewController: UITableViewController, UIDocumentInteractionControlle
         self.navigationController!.toolbarHidden = false;
         
         self.setToolbarItems([clearButton], animated: true)
-
     }
     
     // MARK: - Table view data source
@@ -47,7 +46,7 @@ class TableViewController: UITableViewController, UIDocumentInteractionControlle
     }
     
     func clearClicked() {
-        let confirmClear = UIAlertController(title: "Delete All Timestamps?", message: "Are you sure you want to delete all the timestamps saved in the app? This can't be undone.", preferredStyle: UIAlertControllerStyle.Alert)
+        let confirmClear = UIAlertController(title: "Delete All Timestamps?", message: "Are you sure you want to delete all the timestamps saved? This can't be undone.", preferredStyle: UIAlertControllerStyle.Alert)
         confirmClear.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
         confirmClear.addAction(UIAlertAction(title: "Delete All", style: UIAlertActionStyle.Destructive,
             handler: {(alert: UIAlertAction!) in self.clearTimestamps()}))
@@ -57,6 +56,7 @@ class TableViewController: UITableViewController, UIDocumentInteractionControlle
     
     func clearTimestamps() {
         data.clearTimestamps()
+        saveToFile(txtFileName, contents: data.toTXT())
         loadView()
     }
 

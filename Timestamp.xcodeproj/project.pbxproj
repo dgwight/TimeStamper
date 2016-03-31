@@ -23,7 +23,7 @@
 /* Begin PBXFileReference section */
 		87245A1C1CACADBF00354D29 /* TimestampTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimestampTableViewCell.swift; sourceTree = "<group>"; };
 		87245A1E1CACAF3100354D29 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		878B2A411CA5DDFE0077C290 /* Patient Timestamper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Patient Timestamper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		878B2A411CA5DDFE0077C290 /* Timestamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timestamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		878B2A441CA5DDFE0077C290 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		878B2A461CA5DDFE0077C290 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		878B2A491CA5DDFE0077C290 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -50,7 +50,7 @@
 		878B2A381CA5DDFE0077C290 = {
 			isa = PBXGroup;
 			children = (
-				878B2A431CA5DDFE0077C290 /* ExcelDataExport */,
+				878B2A431CA5DDFE0077C290 /* Timestamp */,
 				878B2A421CA5DDFE0077C290 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -58,12 +58,12 @@
 		878B2A421CA5DDFE0077C290 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				878B2A411CA5DDFE0077C290 /* Patient Timestamper.app */,
+				878B2A411CA5DDFE0077C290 /* Timestamp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		878B2A431CA5DDFE0077C290 /* ExcelDataExport */ = {
+		878B2A431CA5DDFE0077C290 /* Timestamp */ = {
 			isa = PBXGroup;
 			children = (
 				878B2A441CA5DDFE0077C290 /* AppDelegate.swift */,
@@ -79,15 +79,16 @@
 				878B2A581CA5E4BA0077C290 /* Data.swift */,
 				87AAE8551CACD5B100A5545D /* FileAccess.swift */,
 			);
+			name = Timestamp;
 			path = ExcelDataExport;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		878B2A401CA5DDFE0077C290 /* Patient Timestamper */ = {
+		878B2A401CA5DDFE0077C290 /* Timestamp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 878B2A531CA5DDFE0077C290 /* Build configuration list for PBXNativeTarget "Patient Timestamper" */;
+			buildConfigurationList = 878B2A531CA5DDFE0077C290 /* Build configuration list for PBXNativeTarget "Timestamp" */;
 			buildPhases = (
 				878B2A3D1CA5DDFE0077C290 /* Sources */,
 				878B2A3E1CA5DDFE0077C290 /* Frameworks */,
@@ -97,9 +98,9 @@
 			);
 			dependencies = (
 			);
-			name = "Patient Timestamper";
+			name = Timestamp;
 			productName = ExcelDataExport;
-			productReference = 878B2A411CA5DDFE0077C290 /* Patient Timestamper.app */;
+			productReference = 878B2A411CA5DDFE0077C290 /* Timestamp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -118,7 +119,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 878B2A3C1CA5DDFE0077C290 /* Build configuration list for PBXProject "Patient Timestamper" */;
+			buildConfigurationList = 878B2A3C1CA5DDFE0077C290 /* Build configuration list for PBXProject "Timestamp" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -131,7 +132,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				878B2A401CA5DDFE0077C290 /* Patient Timestamper */,
+				878B2A401CA5DDFE0077C290 /* Timestamp */,
 			);
 		};
 /* End PBXProject section */
@@ -282,7 +283,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = patientTimestamper;
-				PRODUCT_NAME = "Patient Timestamper";
+				PRODUCT_NAME = Timestamp;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -298,7 +299,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = patientTimestamper;
-				PRODUCT_NAME = "Patient Timestamper";
+				PRODUCT_NAME = Timestamp;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -307,7 +308,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		878B2A3C1CA5DDFE0077C290 /* Build configuration list for PBXProject "Patient Timestamper" */ = {
+		878B2A3C1CA5DDFE0077C290 /* Build configuration list for PBXProject "Timestamp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				878B2A511CA5DDFE0077C290 /* Debug */,
@@ -316,7 +317,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		878B2A531CA5DDFE0077C290 /* Build configuration list for PBXNativeTarget "Patient Timestamper" */ = {
+		878B2A531CA5DDFE0077C290 /* Build configuration list for PBXNativeTarget "Timestamp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				878B2A541CA5DDFE0077C290 /* Debug */,

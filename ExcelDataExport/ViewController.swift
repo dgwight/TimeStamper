@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+/*
 class ViewController: UIViewController, UIDocumentInteractionControllerDelegate {
     
     var docController = UIDocumentInteractionController()
@@ -137,7 +137,7 @@ class ViewController: UIViewController, UIDocumentInteractionControllerDelegate 
     }
 }
 
-
+*/
 
 
 
