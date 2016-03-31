@@ -14,34 +14,37 @@ class Data {
     
     var timeStamps = [TimeStamp]()
     
-    init() {
-        if let csv = NSUserDefaults.standardUserDefaults().stringForKey("data") {
-            fromCSV(csv)
-        }
-    }
+    init() {}
     
     func addTimeStamp(timeStamp: TimeStamp) {
         timeStamps.append(timeStamp)
-    }
-    
-    func fromCSV(csv: String) {
-        let csvArray = csv.characters.split{$0 == ","}.map(String.init)
-        for timestamp in csvArray {
-            print(timestamp)
-        }
     }
     
     func getCount() -> Int {
         return timeStamps.count
     }
     
-    func saveData() {
-        /*
+    func toTXT() -> String {
+        var txt = "";
         for timeStamp in timeStamps {
-            timeStamp.toNSData()
+            txt += String(timeStamp.caseId) + "`" + String(timeStamp.actionId) + "`" + String(timeStamp.timeStamp) + "`" + timeStamp.notes + " `~"
         }
-        NSUserDefaults.standardUserDefaults().setObject(data.toCSV(), forKey: "data")
- */
+        return txt
+    }
+    
+    func loadFromTXT(txt: String) {
+        let csvArray = txt.characters.split{$0 == "~"}.map(String.init)
+        for timestamp in csvArray {
+            print(timestamp)
+            let timestampTXTarray = timestamp.characters.split{$0 == "`"}.map(String.init)            
+            if let caseId = UInt64(timestampTXTarray[0]) {
+                if let actionId = Int(timestampTXTarray[1]) {
+                    let timeStamp = timestampTXTarray[2]
+                    //let notes = timestampTXTarray[3]
+                    self.addTimeStamp(TimeStamp(caseId: caseId, actionId: actionId, timeStamp: timeStamp, notes: "test"))
+                }
+            }
+        }
     }
     
     func toCSV() -> String {
