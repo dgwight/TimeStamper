@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rCE-ch-J3w">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FFr-Jj-Jq8">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -36,8 +36,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6lr-dS-OOQ">
                                 <rect key="frame" x="12" y="72" width="576" height="203"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BvP-QI-nMG">
-                                        <rect key="frame" x="0.0" y="0.0" width="400" height="203"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BvP-QI-nMG">
+                                        <rect key="frame" x="0.0" y="0.0" width="344" height="203"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MUp-43-uP9">
                                                 <rect key="frame" x="0.0" y="0.0" width="139" height="24"/>
@@ -57,8 +57,8 @@
                                                 </subviews>
                                                 <variation key="heightClass=regular-widthClass=regular" alignment="top" axis="horizontal"/>
                                             </stackView>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Patient Id" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="qTD-gg-4H3">
-                                                <rect key="frame" x="0.0" y="32" width="400" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Patient Id" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="qTD-gg-4H3">
+                                                <rect key="frame" x="0.0" y="32" width="344" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="569" id="HMj-d4-9CI"/>
                                                 </constraints>
@@ -81,8 +81,8 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JmF-hb-pi8">
-                                                <rect key="frame" x="0.0" y="102" width="400" height="101"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="JmF-hb-pi8">
+                                                <rect key="frame" x="0.0" y="102" width="344" height="101"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="450" id="hqp-Py-7ei"/>
@@ -120,11 +120,11 @@
                                             </mask>
                                         </variation>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xgR-GD-pAc">
-                                        <rect key="frame" x="408" y="0.0" width="168" height="203"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xgR-GD-pAc">
+                                        <rect key="frame" x="352" y="0.0" width="224" height="203"/>
                                         <subviews>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tmt-5h-eGa">
-                                                <rect key="frame" x="0.0" y="0.0" width="168" height="18"/>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tmt-5h-eGa">
+                                                <rect key="frame" x="0.0" y="0.0" width="224" height="18"/>
                                                 <color key="backgroundColor" red="0.19101591274305552" green="0.38696224548896718" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <size key="titleShadowOffset" width="2.2250738585072014e-308" height="2.2250738585072014e-308"/>
@@ -135,8 +135,8 @@
                                                     <action selector="buttonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rEU-mJ-TeB"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lhF-jE-kiO">
-                                                <rect key="frame" x="0.0" y="26" width="168" height="19"/>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lhF-jE-kiO">
+                                                <rect key="frame" x="0.0" y="26" width="224" height="19"/>
                                                 <color key="backgroundColor" red="0.49803921569999998" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <state key="normal" title="  2: In OR">
@@ -146,8 +146,8 @@
                                                     <action selector="buttonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bEl-F0-JiL"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="3" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Xp-7z-C9A">
-                                                <rect key="frame" x="0.0" y="53" width="168" height="18"/>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Xp-7z-C9A">
+                                                <rect key="frame" x="0.0" y="53" width="224" height="18"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <state key="normal" title="  3: Anesthesia Ready">
@@ -157,8 +157,8 @@
                                                     <action selector="buttonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2bF-Mg-5cn"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="4" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ie2-0L-TcG">
-                                                <rect key="frame" x="0.0" y="79" width="168" height="19"/>
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ie2-0L-TcG">
+                                                <rect key="frame" x="0.0" y="79" width="224" height="19"/>
                                                 <color key="backgroundColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <state key="normal" title="  4: Start Surgery">
@@ -168,8 +168,8 @@
                                                     <action selector="buttonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EOo-pK-TmV"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="5" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="15A-JY-jdK">
-                                                <rect key="frame" x="0.0" y="106" width="168" height="18"/>
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="15A-JY-jdK">
+                                                <rect key="frame" x="0.0" y="106" width="224" height="18"/>
                                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <state key="normal" title="  5: Stop Surgery">
@@ -179,8 +179,8 @@
                                                     <action selector="buttonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v6b-Nz-bGu"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="6" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hfz-8L-kYO">
-                                                <rect key="frame" x="0.0" y="132" width="168" height="18"/>
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hfz-8L-kYO">
+                                                <rect key="frame" x="0.0" y="132" width="224" height="18"/>
                                                 <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <state key="normal" title="  6: Extubate">
@@ -190,8 +190,8 @@
                                                     <action selector="buttonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rEW-G0-riC"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="7" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9F2-gB-OWa">
-                                                <rect key="frame" x="0.0" y="158" width="168" height="19"/>
+                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9F2-gB-OWa">
+                                                <rect key="frame" x="0.0" y="158" width="224" height="19"/>
                                                 <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <state key="normal" title="  7: Leave OR">
@@ -201,8 +201,8 @@
                                                     <action selector="buttonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b5S-H8-21w"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="8" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9X5-Qt-Qig">
-                                                <rect key="frame" x="0.0" y="185" width="168" height="18"/>
+                                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9X5-Qt-Qig">
+                                                <rect key="frame" x="0.0" y="185" width="224" height="18"/>
                                                 <color key="backgroundColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <state key="normal" title="  8: PACU Report Complete ">
@@ -237,13 +237,302 @@
                     <connections>
                         <outlet property="folderButton" destination="dNR-Ii-IO5" id="R6k-cN-LF2"/>
                         <outlet property="notesInput" destination="JmF-hb-pi8" id="86Z-M4-QEW"/>
-                        <outlet property="patientId" destination="qTD-gg-4H3" id="GOn-dk-gP5"/>
+                        <outlet property="patientIdInput" destination="qTD-gg-4H3" id="3MG-bI-5ZW"/>
                         <outlet property="timestampCount" destination="p1A-cc-kkq" id="b0a-5W-RPT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="11" y="-438"/>
+        </scene>
+        <!--Patient Timestamper-->
+        <scene sceneID="XTK-qe-yUY">
+            <objects>
+                <tableViewController id="3ca-fx-Vq5" customClass="TableViewController" customModule="Patient_Timestamper" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="3lK-y0-4tJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TimestampTableViewCell" rowHeight="80" id="vPR-Om-OHL" customClass="TimestampTableViewCell" customModule="Patient_Timestamper" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="80"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vPR-Om-OHL" id="lbF-7v-RO7">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="79"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="jm5-Lp-yLR">
+                                            <rect key="frame" x="8" y="8" width="584" height="63"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="P3O-ZS-lpi">
+                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="63"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="action" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZUE-4V-Xzq">
+                                                            <rect key="frame" x="0.0" y="0.0" width="200" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Emx-BU-R0c">
+                                                            <rect key="frame" x="0.0" y="21" width="200" height="21"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Patient: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q1z-ok-c2R">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="70" height="21"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="70" id="Stk-yg-Nu7"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="patientId" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcX-Nz-REo">
+                                                                    <rect key="frame" x="70" y="0.0" width="130" height="21"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dateTime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPC-ut-odP">
+                                                            <rect key="frame" x="0.0" y="42" width="200" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="200" id="zv2-UP-O9Q"/>
+                                                    </constraints>
+                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbL-kw-t5P">
+                                                    <rect key="frame" x="216" y="0.0" width="368" height="63"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="jm5-Lp-yLR" firstAttribute="leading" secondItem="lbF-7v-RO7" secondAttribute="leadingMargin" id="8Rb-MU-oJX"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="jm5-Lp-yLR" secondAttribute="bottom" id="Kek-7U-flg"/>
+                                        <constraint firstItem="jm5-Lp-yLR" firstAttribute="top" secondItem="lbF-7v-RO7" secondAttribute="topMargin" id="ulX-pm-kH7"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="jm5-Lp-yLR" secondAttribute="trailing" id="vCx-Qk-y9k"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="action" destination="ZUE-4V-Xzq" id="tmM-Uu-8Ez"/>
+                                    <outlet property="date" destination="YPC-ut-odP" id="XDQ-CM-NHQ"/>
+                                    <outlet property="notes" destination="rbL-kw-t5P" id="1fi-6M-4Cr"/>
+                                    <outlet property="patientId" destination="hcX-Nz-REo" id="iCR-I6-J42"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="3ca-fx-Vq5" id="44i-sj-56j"/>
+                            <outlet property="delegate" destination="3ca-fx-Vq5" id="tH8-Iw-LIi"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Patient Timestamper" id="rNv-vF-iDr">
+                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="wCq-vc-D13">
+                            <connections>
+                                <action selector="shareDoc:" destination="3ca-fx-Vq5" id="J64-kR-mL7"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="uCO-5v-aCT">
+                            <connections>
+                                <action selector="addTimestamp:" destination="3ca-fx-Vq5" id="cHX-u0-cPB"/>
+                                <segue destination="ojG-wx-EYv" kind="presentation" id="YN6-5Q-5Mn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sGs-om-OOT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-336" y="335"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8Xo-nz-qbq">
+            <objects>
+                <navigationController id="ojG-wx-EYv" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="b3e-MK-YEJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="65l-xp-teO" kind="relationship" relationship="rootViewController" id="4Dq-z2-m67"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f1k-EY-ydi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1114.5" y="1052.25"/>
+        </scene>
+        <!--Patient Timestamper-->
+        <scene sceneID="aJj-Fc-A8a">
+            <objects>
+                <viewController id="65l-xp-teO" customClass="AddTimestampViewController" customModule="Patient_Timestamper" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UMF-zH-hng"/>
+                        <viewControllerLayoutGuide type="bottom" id="1Cw-x6-eUg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SVJ-pP-1Pu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="VUr-pp-gGm">
+                                <rect key="frame" x="20" y="74" width="560" height="256"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xFI-fg-5Kz">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.45121419601397628" green="0.5" blue="0.49535673537583352" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Patient Id:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwY-k6-nfZ">
+                                        <rect key="frame" x="0.0" y="25" width="560" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular" ambiguous="YES">
+                                            <rect key="frame" x="0.0" y="62" width="59" height="24"/>
+                                        </variation>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Patient Id" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="YtX-sl-wep">
+                                        <rect key="frame" x="0.0" y="53" width="560" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <variation key="heightClass=regular-widthClass=regular" ambiguous="YES">
+                                            <rect key="frame" x="0.0" y="28" width="82" height="30"/>
+                                        </variation>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Notes:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F8F-fz-bdV">
+                                        <rect key="frame" x="0.0" y="87" width="560" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular" ambiguous="YES">
+                                            <rect key="frame" x="0.0" y="62" width="59" height="24"/>
+                                        </variation>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Qin-U3-VSb">
+                                        <rect key="frame" x="0.0" y="115" width="560" height="141"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="90" width="760" height="646"/>
+                                        </variation>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="YtX-sl-wep" firstAttribute="leading" secondItem="VUr-pp-gGm" secondAttribute="leading" id="LoJ-67-1T7"/>
+                                    <constraint firstAttribute="trailing" secondItem="Qin-U3-VSb" secondAttribute="trailing" id="SaV-4w-F1Z"/>
+                                    <constraint firstAttribute="trailing" secondItem="YtX-sl-wep" secondAttribute="trailing" id="XbE-lv-eIM"/>
+                                    <constraint firstItem="Qin-U3-VSb" firstAttribute="leading" secondItem="VUr-pp-gGm" secondAttribute="leading" id="xyI-47-gF4"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="LoJ-67-1T7"/>
+                                        <exclude reference="XbE-lv-eIM"/>
+                                        <exclude reference="SaV-4w-F1Z"/>
+                                        <exclude reference="xyI-47-gF4"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" alignment="top" axis="vertical" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="20" y="188" width="760" height="736"/>
+                                    <mask key="constraints">
+                                        <exclude reference="LoJ-67-1T7"/>
+                                        <exclude reference="XbE-lv-eIM"/>
+                                        <exclude reference="SaV-4w-F1Z"/>
+                                        <exclude reference="xyI-47-gF4"/>
+                                    </mask>
+                                </variation>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Patient Id:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="am2-RZ-u4S">
+                                <rect key="frame" x="0.0" y="0.0" width="90" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="64" width="90" height="24"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VUr-pp-gGm" firstAttribute="top" secondItem="UMF-zH-hng" secondAttribute="bottom" id="7X3-N8-4NJ"/>
+                            <constraint firstItem="VUr-pp-gGm" firstAttribute="leading" secondItem="SVJ-pP-1Pu" secondAttribute="leadingMargin" id="8VP-10-7X4"/>
+                            <constraint firstItem="VUr-pp-gGm" firstAttribute="centerY" secondItem="SVJ-pP-1Pu" secondAttribute="centerY" id="DCW-e6-Lup"/>
+                            <constraint firstItem="1Cw-x6-eUg" firstAttribute="top" secondItem="VUr-pp-gGm" secondAttribute="bottom" id="Hh6-gc-WCF"/>
+                            <constraint firstItem="VUr-pp-gGm" firstAttribute="top" secondItem="UMF-zH-hng" secondAttribute="bottom" constant="10" id="Lls-22-wXq"/>
+                            <constraint firstItem="VUr-pp-gGm" firstAttribute="leading" secondItem="SVJ-pP-1Pu" secondAttribute="leadingMargin" id="UbJ-tz-3Gq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VUr-pp-gGm" secondAttribute="trailing" id="Xbr-1b-krt"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="VUr-pp-gGm" secondAttribute="bottom" constant="270" id="b9e-1J-a5N"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VUr-pp-gGm" secondAttribute="trailing" id="rkn-D1-Jaa"/>
+                            <constraint firstItem="VUr-pp-gGm" firstAttribute="centerX" secondItem="SVJ-pP-1Pu" secondAttribute="centerX" id="yXk-6R-9BE"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="am2-RZ-u4S"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="7X3-N8-4NJ"/>
+                                <exclude reference="DCW-e6-Lup"/>
+                                <exclude reference="UbJ-tz-3Gq"/>
+                                <exclude reference="Xbr-1b-krt"/>
+                                <exclude reference="yXk-6R-9BE"/>
+                                <exclude reference="Hh6-gc-WCF"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="am2-RZ-u4S"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="DCW-e6-Lup"/>
+                                <exclude reference="UbJ-tz-3Gq"/>
+                                <exclude reference="Xbr-1b-krt"/>
+                                <exclude reference="yXk-6R-9BE"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Patient Timestamper" id="Roo-iQ-5tg">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Zi4-A6-vHY">
+                            <connections>
+                                <segue destination="FFr-Jj-Jq8" kind="presentation" identifier="toTableView" id="4M5-Gl-9GH"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="tSL-4R-WZG">
+                            <connections>
+                                <action selector="done:" destination="65l-xp-teO" id="hby-AR-v55"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="dateTime" destination="xFI-fg-5Kz" id="r84-d9-17F"/>
+                        <outlet property="notesInput" destination="Qin-U3-VSb" id="ymF-aE-H3t"/>
+                        <outlet property="patientIdInput" destination="YtX-sl-wep" id="vuY-7j-yAb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dWY-w8-nfO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-336" y="1052.25"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="oXq-gh-HY4">
+            <objects>
+                <navigationController id="FFr-Jj-Jq8" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bAz-Ia-yrk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="3ca-fx-Vq5" kind="relationship" relationship="rootViewController" id="Apc-wH-ZJH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bai-N3-4in" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1114.5" y="335.25"/>
         </scene>
     </scenes>
 </document>

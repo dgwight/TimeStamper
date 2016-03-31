@@ -8,14 +8,16 @@
 
 import UIKit
 
+let actionNames = ["None", "Interview Complete", "In OR", "Anesthesia Ready", "Start Surgery", "Stop Surgery", "Extubate",  "Leave OR", "PACU Report Complete"]
+
 class TimeStamp {
-    let caseId: UInt64
+    let patientId: String
     let actionId: Int
     let timeStamp: String
     let notes: String
     
-    init(caseId: UInt64, actionId: Int, timeStamp: String, notes: String) {
-        self.caseId = caseId
+    init(patientId: String, actionId: Int, timeStamp: String, notes: String) {
+        self.patientId = patientId
         self.actionId = actionId
         self.timeStamp = timeStamp
         self.notes = notes

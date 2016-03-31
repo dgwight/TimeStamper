@@ -20,6 +20,10 @@ class Data {
         timeStamps.append(timeStamp)
     }
     
+    func clearTimestamps() {
+        timeStamps.removeAll()
+    }
+    
     func getCount() -> Int {
         return timeStamps.count
     }
@@ -27,7 +31,7 @@ class Data {
     func toTXT() -> String {
         var txt = "";
         for timeStamp in timeStamps {
-            txt += String(timeStamp.caseId) + "`" + String(timeStamp.actionId) + "`" + String(timeStamp.timeStamp) + "`" + timeStamp.notes + " `~"
+            txt += String(timeStamp.patientId) + "`" + String(timeStamp.actionId) + "`" + String(timeStamp.timeStamp) + "`" + timeStamp.notes + " `~"
         }
         return txt
     }
@@ -35,14 +39,12 @@ class Data {
     func loadFromTXT(txt: String) {
         let csvArray = txt.characters.split{$0 == "~"}.map(String.init)
         for timestamp in csvArray {
-            print(timestamp)
-            let timestampTXTarray = timestamp.characters.split{$0 == "`"}.map(String.init)            
-            if let caseId = UInt64(timestampTXTarray[0]) {
-                if let actionId = Int(timestampTXTarray[1]) {
-                    let timeStamp = timestampTXTarray[2]
-                    //let notes = timestampTXTarray[3]
-                    self.addTimeStamp(TimeStamp(caseId: caseId, actionId: actionId, timeStamp: timeStamp, notes: "test"))
-                }
+            let timestampTXTarray = timestamp.characters.split{$0 == "`"}.map(String.init)
+            let patientId = timestampTXTarray[0]
+            if let actionId = Int(timestampTXTarray[1]) {
+                let timeStamp = timestampTXTarray[2]
+                let notes = timestampTXTarray[3]
+                self.addTimeStamp(TimeStamp(patientId: patientId, actionId: actionId, timeStamp: timeStamp, notes: notes))
             }
         }
     }
@@ -50,8 +52,12 @@ class Data {
     func toCSV() -> String {
         var csv = "CaseID,ActionID,TimeStamp,Notes\n";
         for timeStamp in timeStamps {
-            csv += String(timeStamp.caseId) + "," + String(timeStamp.actionId) + ",\"" + String(timeStamp.timeStamp) + "\",\"" + timeStamp.notes + "\"\n"
+            csv += String(timeStamp.patientId) + "," + String(timeStamp.actionId) + ",\"" + String(timeStamp.timeStamp) + "\",\"" + timeStamp.notes + "\"\n"
         }
         return csv
+    }
+    
+    func getTimeStamps() -> [TimeStamp] {
+        return self.timeStamps
     }
 }

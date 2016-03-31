@@ -10,16 +10,12 @@ import UIKit
 
 class ViewController: UIViewController, UIDocumentInteractionControllerDelegate {
     
-    @IBOutlet weak var folderButton: UIBarButtonItem!
     var docController = UIDocumentInteractionController()
-    let csvFileName = "PatientTimestamper.csv"
-    let txtFileName = "dataStore.txt"
 
-    
     let data = Data.sharedInstance
     @IBOutlet weak var timestampCount: UILabel!
-    @IBOutlet weak var patientId: UITextField!
     @IBOutlet weak var notesInput: UITextView!
+    @IBOutlet weak var patientIdInput: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,18 +31,19 @@ class ViewController: UIViewController, UIDocumentInteractionControllerDelegate 
     
     @IBAction func buttonClicked(sender: UIButton) {
         
-        if let caseId = UInt64(patientId.text!) {
+        if let patientId = patientIdInput.text {
             let actionId = sender.tag
             let timeStamp = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .ShortStyle, timeStyle: .ShortStyle)
             let notes = notesInput.text
-            data.addTimeStamp(TimeStamp(caseId: caseId, actionId: actionId, timeStamp: timeStamp, notes: notes))
+            data.addTimeStamp(TimeStamp(patientId: patientId, actionId: actionId, timeStamp: timeStamp, notes: notes))
             notesInput.text = ""
             timestampCount.text = String(data.getCount())
-            self.saveToFile(self.txtFileName, contents: data.toTXT())
-
-        } else {
-            invalidPatientId()
+            self.saveToFile(txtFileName, contents: data.toTXT())
         }
+
+        //} else {
+         //   invalidPatientId()
+        //}
         //folderButton.badgeV
     }
     
@@ -85,24 +82,16 @@ class ViewController: UIViewController, UIDocumentInteractionControllerDelegate 
     }
     
     @IBAction func shareDoc(sender: UIBarButtonItem) {
-        self.saveToFile(self.csvFileName, contents: data.toCSV())
+        print("ShareDoc")
+        self.saveToFile(csvFileName, contents: data.toCSV())
         if let tmpDir : NSString = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true).first {
-            let path = tmpDir.stringByAppendingPathComponent(self.csvFileName)
-            do {
-                let txtFromFile = try NSString(contentsOfFile: path, encoding: NSUTF8StringEncoding)
-                data.loadFromTXT(txtFromFile as String)
-                docController = UIDocumentInteractionController(URL: NSURL(fileURLWithPath: path))
-
-            } catch {
-                print("\(error)")
-            }
+            let path = tmpDir.stringByAppendingPathComponent(csvFileName)
+            docController = UIDocumentInteractionController(URL: NSURL(fileURLWithPath: path))
         }
-
         docController.UTI = "public.comma-separated-values-text"
         docController.delegate = self//delegate
         docController.name = "Export Data"
         docController.presentOptionsMenuFromBarButtonItem(sender, animated: true)
-        
     }
     
 
