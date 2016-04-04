@@ -14,42 +14,40 @@ class AddTimestampViewController: UIViewController {
     @IBOutlet weak var patientIdInput: UITextField!
     @IBOutlet weak var notesInput: UITextView!
     let data = Data.sharedInstance
-    let now = NSDate()
-
+    var timer = NSTimer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dateTime.text = NSDateFormatter.localizedStringFromDate(now, dateStyle: .LongStyle, timeStyle: .MediumStyle)
+
+        tick()
         patientIdInput.text = data.lastPatientId
-        
+        patientIdInput.clipsToBounds = true
+        patientIdInput.layer.cornerRadius = notesInput.frame.size.height/20
+        patientIdInput.layer.masksToBounds = false
         
         notesInput.layer.cornerRadius = notesInput.frame.size.height/20
         notesInput.layer.masksToBounds = true
         notesInput.layer.shadowOpacity=0.4
-        
-        
-        //let shadowView = UIView(frame: notesInput.frame)
-        //shadowView.layer.shadowOffset = CGSizeMake(1, 1)
-        //shadowView.layer.shouldRasterize = true
-        //shadowView.layer.masksToBounds = false
-        //notesInput.addSubview(shadowView)
 
-
-        patientIdInput.clipsToBounds = true
-        patientIdInput.layer.cornerRadius = notesInput.frame.size.height/20
-        //patientIdInput.layer.shadowOpacity=0.4
-        //patientIdInput.layer.shadowOffset = CGSizeMake(1, 1)
-        //patientIdInput.layer.shouldRasterize = true
-        patientIdInput.layer.masksToBounds = false
-
+        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self,selector: #selector(AddTimestampViewController.tick), userInfo: nil, repeats: true)
+    
+        setUpListIcon()
     }
     
+    func tick() {
+        dateTime.text = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .LongStyle, timeStyle: .ShortStyle)
+    }
+
+    func segueToTableView() {
+        performSegueWithIdentifier("toTableView", sender: self)
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func done(sender: UIBarButtonItem) {
+    @IBAction func displayTimestampEvents(sender: UIBarButtonItem) {
         if patientIdInput.text != "" {
             let actionSelector = UIAlertController(title: "Select Event", message: "For patient: " + patientIdInput.text!, preferredStyle: UIAlertControllerStyle.ActionSheet)
             actionSelector.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
@@ -87,12 +85,12 @@ class AddTimestampViewController: UIViewController {
     
     func addTimestamp(actionId: Int) {
         let patientId = patientIdInput.text!
-        let timeStamp = NSDateFormatter.localizedStringFromDate(now, dateStyle: .ShortStyle, timeStyle: .ShortStyle)
+        let timeStamp = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .ShortStyle, timeStyle: .ShortStyle)
         let notes = notesInput.text
         data.addTimeStamp(TimeStamp(patientId: patientId, actionId: actionId, timeStamp: timeStamp, notes: notes))
         notesInput.text = ""
         self.saveToFile(txtFileName, contents: data.toTXT())
-        self.performSegueWithIdentifier("toTableView", sender: self)
+        setUpListIcon()
     }
     
     func saveToFile(filename: String, contents: String) {
@@ -105,5 +103,31 @@ class AddTimestampViewController: UIViewController {
                 print("\(error)")
             }
         }
+    }
+    
+    func setUpListIcon() {
+        let count = data.getCount()
+        let viewTimestampsImage = UIImage(named: "ListIcon")
+        let viewTimestampsButton = UIButton(type: UIButtonType.Custom)
+        viewTimestampsButton.frame = CGRect(x: 0.0, y: 0.0, width: viewTimestampsImage!.size.width, height: viewTimestampsImage!.size.height)
+        viewTimestampsButton.setImage(viewTimestampsImage, forState: UIControlState.Normal)
+        viewTimestampsButton.setImage(UIImage(named: "ListIconH"), forState: UIControlState.Highlighted)
+        
+        if (count != 0) {
+            let digits = Int(log10(Double(count)))
+            let badge = UILabel(frame: CGRect(x: viewTimestampsButton.frame.size.width - 10.0, y: viewTimestampsButton.frame.origin.y - 4.0, width: 17.0 + CGFloat(digits * 6), height: 17.0))
+            badge.backgroundColor = UIColor(colorLiteralRed: 1.0, green: 91.0/255.0, blue: 84.0/255.0, alpha: 1.0)
+            badge.layer.cornerRadius = 8.0
+            badge.clipsToBounds = true
+            badge.text = String(count);
+            badge.textAlignment = NSTextAlignment.Center
+            badge.textColor = UIColor.whiteColor()
+            badge.font = UIFont(name: "Helvetica-Bold", size: 12.0)
+        
+            viewTimestampsButton.addSubview(badge)
+        }
+        viewTimestampsButton.addTarget(self, action: #selector(AddTimestampViewController.segueToTableView), forControlEvents: UIControlEvents.TouchUpInside)
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: viewTimestampsButton)
     }
 }

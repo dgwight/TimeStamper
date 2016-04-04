@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FFr-Jj-Jq8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ojG-wx-EYv">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Timestamp-->
+        <!--Saved Timestamps-->
         <scene sceneID="XTK-qe-yUY">
             <objects>
                 <tableViewController id="3ca-fx-Vq5" customClass="TableViewController" customModule="Timestamp" customModuleProvider="target" sceneMemberID="viewController">
@@ -30,7 +30,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="action" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZUE-4V-Xzq">
                                                             <rect key="frame" x="0.0" y="0.0" width="200" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Emx-BU-R0c">
@@ -42,13 +42,13 @@
                                                                         <constraint firstAttribute="width" constant="70" id="Stk-yg-Nu7"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="patientId" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcX-Nz-REo">
                                                                     <rect key="frame" x="70" y="0.0" width="130" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
@@ -67,15 +67,15 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbL-kw-t5P">
                                                     <rect key="frame" x="216" y="0.0" width="368" height="63"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="216" y="0.0" width="168" height="63"/>
+                                                    <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                                        <rect key="frame" x="216" y="0.0" width="568" height="63"/>
                                                     </variation>
                                                 </label>
                                             </subviews>
-                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                <rect key="frame" x="8" y="8" width="384" height="63"/>
+                                            <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                                <rect key="frame" x="8" y="8" width="784" height="63"/>
                                             </variation>
                                         </stackView>
                                     </subviews>
@@ -99,16 +99,17 @@
                             <outlet property="delegate" destination="3ca-fx-Vq5" id="tH8-Iw-LIi"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Timestamp" id="rNv-vF-iDr">
-                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="wCq-vc-D13">
+                    <navigationItem key="navigationItem" title="Saved Timestamps" id="rNv-vF-iDr">
+                        <barButtonItem key="leftBarButtonItem" image="WriteIcon" id="Ids-4p-CbK">
+                            <color key="tintColor" red="0.28627450980392155" green="0.22352941176470587" blue="0.87058823529411766" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <action selector="shareDoc:" destination="3ca-fx-Vq5" id="J64-kR-mL7"/>
+                                <segue destination="ojG-wx-EYv" kind="presentation" id="tJ1-OO-0EJ"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="uCO-5v-aCT">
+                        <barButtonItem key="rightBarButtonItem" image="ExportIcon" id="pLX-Gg-5BP">
+                            <color key="tintColor" red="0.28627450980000002" green="0.22352941179999999" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <action selector="addTimestamp:" destination="3ca-fx-Vq5" id="cHX-u0-cPB"/>
-                                <segue destination="ojG-wx-EYv" kind="presentation" id="YN6-5Q-5Mn"/>
+                                <action selector="sharDoc:" destination="3ca-fx-Vq5" id="Cs8-nJ-ZDT"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -150,26 +151,38 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xFI-fg-5Kz">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
                                         <color key="textColor" red="0.45121419601397628" green="0.5" blue="0.49535673537583352" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="760" height="21"/>
+                                        </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Patient Id:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwY-k6-nfZ">
                                         <rect key="frame" x="0.0" y="25" width="560" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="25" width="760" height="24"/>
+                                        </variation>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Patient Id" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="YtX-sl-wep">
                                         <rect key="frame" x="0.0" y="53" width="560" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="53" width="760" height="30"/>
+                                        </variation>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Notes:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F8F-fz-bdV">
                                         <rect key="frame" x="0.0" y="87" width="560" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="87" width="760" height="24"/>
+                                        </variation>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Qin-U3-VSb">
                                         <rect key="frame" x="0.0" y="115" width="560" height="141"/>
@@ -211,7 +224,7 @@
                                 </variation>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="VUr-pp-gGm" firstAttribute="top" secondItem="UMF-zH-hng" secondAttribute="bottom" id="7X3-N8-4NJ"/>
                             <constraint firstItem="VUr-pp-gGm" firstAttribute="leading" secondItem="SVJ-pP-1Pu" secondAttribute="leadingMargin" id="8VP-10-7X4"/>
@@ -253,14 +266,10 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Timestamp" id="Roo-iQ-5tg">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Zi4-A6-vHY">
+                        <barButtonItem key="rightBarButtonItem" image="AddIcon" id="lRm-vZ-Wdt">
+                            <color key="tintColor" red="0.28627450980392155" green="0.22352941176470587" blue="0.87058823529411766" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="FFr-Jj-Jq8" kind="presentation" identifier="toTableView" id="4M5-Gl-9GH"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="tSL-4R-WZG">
-                            <connections>
-                                <action selector="done:" destination="65l-xp-teO" id="hby-AR-v55"/>
+                                <action selector="displayTimestampEvents:" destination="65l-xp-teO" id="XPf-tO-GHK"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -268,6 +277,7 @@
                         <outlet property="dateTime" destination="xFI-fg-5Kz" id="r84-d9-17F"/>
                         <outlet property="notesInput" destination="Qin-U3-VSb" id="ymF-aE-H3t"/>
                         <outlet property="patientIdInput" destination="YtX-sl-wep" id="vuY-7j-yAb"/>
+                        <segue destination="FFr-Jj-Jq8" kind="presentation" identifier="toTableView" id="5PT-nQ-2Tp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dWY-w8-nfO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -291,4 +301,9 @@
             <point key="canvasLocation" x="-1114.5" y="335.25"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="AddIcon" width="30" height="30"/>
+        <image name="ExportIcon" width="30" height="30"/>
+        <image name="WriteIcon" width="30" height="30"/>
+    </resources>
 </document>

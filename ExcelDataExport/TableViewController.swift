@@ -17,11 +17,15 @@ class TableViewController: UITableViewController, UIDocumentInteractionControlle
         super.viewDidLoad()
         let timeStampsTemp = data.getTimeStamps()
         self.timeStamps = timeStampsTemp.reverse()
-        let clearButton = UIBarButtonItem(title: "Clear", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(TableViewController.clearClicked))
-        //self.navigationController!.toolbar.setItems([clearButton], animated: true)
-        self.navigationController!.toolbarHidden = false;
         
-        self.setToolbarItems([clearButton], animated: true)
+        let trashIconImage = UIImage(named: "TrashIcon")
+        let trashButton = UIButton(type: UIButtonType.Custom)
+        trashButton.frame = CGRect(x: 0.0, y: 0.0, width: trashIconImage!.size.width, height: trashIconImage!.size.height)
+        trashButton.setImage(trashIconImage, forState: UIControlState.Normal)
+        trashButton.setImage(UIImage(named: "TrashIconH"), forState: UIControlState.Highlighted)
+        trashButton.addTarget(self, action: #selector(TableViewController.clearClicked), forControlEvents: UIControlEvents.TouchUpInside)
+        self.navigationController!.toolbarHidden = false;
+        self.setToolbarItems([UIBarButtonItem(customView: trashButton)], animated: true)
     }
     
     // MARK: - Table view data source
@@ -60,8 +64,7 @@ class TableViewController: UITableViewController, UIDocumentInteractionControlle
         loadView()
     }
 
-    @IBAction func shareDoc(sender: UIBarButtonItem) {
-        print("ShareDoc")
+    @IBAction func sharDoc(sender: UIBarButtonItem) {
         saveToFile(csvFileName, contents: data.toCSV())
         if let tmpDir : NSString = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true).first {
             let path = tmpDir.stringByAppendingPathComponent(csvFileName)
@@ -71,6 +74,10 @@ class TableViewController: UITableViewController, UIDocumentInteractionControlle
         docController.delegate = self//delegate
         docController.name = "Export Data"
         docController.presentOptionsMenuFromBarButtonItem(sender, animated: true)
+    }
+    
+    func segueToTableView() {
+        performSegueWithIdentifier("toAddTimestamp", sender: self)
     }
 
     override func shouldAutorotate() -> Bool {
