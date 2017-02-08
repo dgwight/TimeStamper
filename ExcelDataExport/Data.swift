@@ -16,7 +16,7 @@ class Data {
     
     init() {}
     
-    func addTimeStamp(timeStamp: TimeStamp) {
+    func addTimeStamp(_ timeStamp: TimeStamp) {
         self.lastPatientId = timeStamp.patientId
         timeStamps.append(timeStamp)
     }
@@ -32,12 +32,14 @@ class Data {
     func toTXT() -> String {
         var txt = "";
         for timeStamp in timeStamps {
-            txt += String(timeStamp.patientId) + "`" + String(timeStamp.actionId) + "`" + String(timeStamp.timeStamp) + "`" + timeStamp.notes + " `⊗"
+            txt += String(timeStamp.patientId) + "`"
+            txt += String(timeStamp.actionId) + "`"
+            txt += String(timeStamp.timeStamp) + "`" + timeStamp.notes + " `⊗"
         }
         return txt
     }
     
-    func loadFromTXT(txt: String) {
+    func loadFromTXT(_ txt: String) {
         let csvArray = txt.characters.split{$0 == "⊗"}.map(String.init)
         for timestamp in csvArray {
             let timestampTXTarray = timestamp.characters.split{$0 == "`"}.map(String.init)
@@ -53,7 +55,9 @@ class Data {
     func toCSV() -> String {
         var csv = "CaseID,ActionID,TimeStamp,Notes\n";
         for timeStamp in timeStamps {
-            csv += String(timeStamp.patientId) + "," + String(timeStamp.actionId) + ",\"" + String(timeStamp.timeStamp) + "\",\"" + timeStamp.notes + "\"\n"
+            csv += String(timeStamp.patientId) + ","
+            csv += String(timeStamp.actionId) + ",\""
+            csv += String(timeStamp.timeStamp) + "\",\"" + timeStamp.notes + "\"\n"
         }
         return csv
     }

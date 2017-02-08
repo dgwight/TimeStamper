@@ -20,6 +20,6 @@ class TimeStamp {
         self.patientId = patientId
         self.actionId = actionId
         self.timeStamp = timeStamp
-        self.notes = notes.stringByReplacingOccurrencesOfString("`", withString: "'").stringByReplacingOccurrencesOfString("⊗", withString: "x")
+        self.notes = notes.replacingOccurrences(of: "`", with: "'").replacingOccurrences(of: "⊗", with: "x")
     }
 }

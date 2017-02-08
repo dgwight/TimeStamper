@@ -14,7 +14,7 @@ class AddTimestampViewController: UIViewController {
     @IBOutlet weak var patientIdInput: UITextField!
     @IBOutlet weak var notesInput: UITextView!
     let data = Data.sharedInstance
-    var timer = NSTimer()
+    var timer = Timer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,17 +29,17 @@ class AddTimestampViewController: UIViewController {
         notesInput.layer.masksToBounds = true
         notesInput.layer.shadowOpacity=0.4
 
-        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self,selector: #selector(AddTimestampViewController.tick), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self,selector: #selector(AddTimestampViewController.tick), userInfo: nil, repeats: true)
     
         setUpListIcon()
     }
     
     func tick() {
-        dateTime.text = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .LongStyle, timeStyle: .ShortStyle)
+        dateTime.text = DateFormatter.localizedString(from: Date(), dateStyle: .long, timeStyle: .short)
     }
 
     func segueToTableView() {
-        performSegueWithIdentifier("toTableView", sender: self)
+        performSegue(withIdentifier: "toTableView", sender: self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,58 +47,58 @@ class AddTimestampViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func displayTimestampEvents(sender: UIBarButtonItem) {
+    @IBAction func displayTimestampEvents(_ sender: UIBarButtonItem) {
         if patientIdInput.text != "" {
-            let actionSelector = UIAlertController(title: "Select Event", message: "For patient: " + patientIdInput.text!, preferredStyle: UIAlertControllerStyle.ActionSheet)
-            actionSelector.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
-            actionSelector.addAction(UIAlertAction(title: "Interview Complete", style: UIAlertActionStyle.Default,
+            let actionSelector = UIAlertController(title: "Select Event", message: "For patient: " + patientIdInput.text!, preferredStyle: UIAlertControllerStyle.actionSheet)
+            actionSelector.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+            actionSelector.addAction(UIAlertAction(title: "Interview Complete", style: UIAlertActionStyle.default,
                 handler: {(alert: UIAlertAction!) in self.addTimestamp(1)}))
-            actionSelector.addAction(UIAlertAction(title: "In OR", style: UIAlertActionStyle.Default,
+            actionSelector.addAction(UIAlertAction(title: "In OR", style: UIAlertActionStyle.default,
                 handler: {(alert: UIAlertAction!) in self.addTimestamp(2)}))
-            actionSelector.addAction(UIAlertAction(title: "Anesthesia Ready", style: UIAlertActionStyle.Default,
+            actionSelector.addAction(UIAlertAction(title: "Anesthesia Ready", style: UIAlertActionStyle.default,
                 handler: {(alert: UIAlertAction!) in self.addTimestamp(3)}))
-            actionSelector.addAction(UIAlertAction(title: "Start Surgery", style: UIAlertActionStyle.Default,
+            actionSelector.addAction(UIAlertAction(title: "Start Surgery", style: UIAlertActionStyle.default,
                 handler: {(alert: UIAlertAction!) in self.addTimestamp(4)}))
-            actionSelector.addAction(UIAlertAction(title: "Stop Surgery", style: UIAlertActionStyle.Default,
+            actionSelector.addAction(UIAlertAction(title: "Stop Surgery", style: UIAlertActionStyle.default,
                 handler: {(alert: UIAlertAction!) in self.addTimestamp(5)}))
-            actionSelector.addAction(UIAlertAction(title: "Extubate", style: UIAlertActionStyle.Default,
+            actionSelector.addAction(UIAlertAction(title: "Extubate", style: UIAlertActionStyle.default,
                 handler: {(alert: UIAlertAction!) in self.addTimestamp(6)}))
-            actionSelector.addAction(UIAlertAction(title: "Leave OR", style: UIAlertActionStyle.Default,
+            actionSelector.addAction(UIAlertAction(title: "Leave OR", style: UIAlertActionStyle.default,
                 handler: {(alert: UIAlertAction!) in self.addTimestamp(7)}))
-            actionSelector.addAction(UIAlertAction(title: "PACU Report Complete", style: UIAlertActionStyle.Default,
+            actionSelector.addAction(UIAlertAction(title: "PACU Report Complete", style: UIAlertActionStyle.default,
                 handler: {(alert: UIAlertAction!) in self.addTimestamp(8)}))
             
             if let popoverController = actionSelector.popoverPresentationController {
                 popoverController.barButtonItem = sender
             }
-            self.presentViewController(actionSelector, animated: true, completion: nil)
+            self.present(actionSelector, animated: true, completion: nil)
         } else {
-            let noIdError = UIAlertController(title: "Invalid Patient Id", message: "Please enter the patient's id", preferredStyle: UIAlertControllerStyle.Alert)
-            noIdError.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+            let noIdError = UIAlertController(title: "Invalid Patient Id", message: "Please enter the patient's id", preferredStyle: UIAlertControllerStyle.alert)
+            noIdError.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
   
             if let popoverController = noIdError.popoverPresentationController {
                 popoverController.barButtonItem = sender
             }
-            self.presentViewController(noIdError, animated: true, completion: nil)
+            self.present(noIdError, animated: true, completion: nil)
         }
     }
     
-    func addTimestamp(actionId: Int) {
+    func addTimestamp(_ actionId: Int) {
         let patientId = patientIdInput.text!
-        let timeStamp = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .ShortStyle, timeStyle: .ShortStyle)
-        let notes = notesInput.text
+        let timeStamp = DateFormatter.localizedString(from: Date(), dateStyle: .short, timeStyle: .short)
+        let notes = notesInput.text ?? ""
         data.addTimeStamp(TimeStamp(patientId: patientId, actionId: actionId, timeStamp: timeStamp, notes: notes))
         notesInput.text = ""
         self.saveToFile(txtFileName, contents: data.toTXT())
         setUpListIcon()
     }
     
-    func saveToFile(filename: String, contents: String) {
-        if let tmpDir : NSString = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true).first {
-            let path = tmpDir.stringByAppendingPathComponent(filename)
+    func saveToFile(_ filename: String, contents: String) {
+        if let tmpDir : NSString = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.allDomainsMask, true).first as NSString? {
+            let path = tmpDir.appendingPathComponent(filename)
             let contentsOfFile = contents
             do {
-                try contentsOfFile.writeToFile(path, atomically: true, encoding: NSUTF8StringEncoding)
+                try contentsOfFile.write(toFile: path, atomically: true, encoding: String.Encoding.utf8)
             } catch {
                 print("\(error)")
             }
@@ -108,10 +108,10 @@ class AddTimestampViewController: UIViewController {
     func setUpListIcon() {
         let count = data.getCount()
         let viewTimestampsImage = UIImage(named: "ListIcon")
-        let viewTimestampsButton = UIButton(type: UIButtonType.Custom)
+        let viewTimestampsButton = UIButton(type: UIButtonType.custom)
         viewTimestampsButton.frame = CGRect(x: 0.0, y: 0.0, width: viewTimestampsImage!.size.width, height: viewTimestampsImage!.size.height)
-        viewTimestampsButton.setImage(viewTimestampsImage, forState: UIControlState.Normal)
-        viewTimestampsButton.setImage(UIImage(named: "ListIconH"), forState: UIControlState.Highlighted)
+        viewTimestampsButton.setImage(viewTimestampsImage, for: UIControlState())
+        viewTimestampsButton.setImage(UIImage(named: "ListIconH"), for: UIControlState.highlighted)
         
         if (count != 0) {
             let digits = Int(log10(Double(count)))
@@ -120,13 +120,13 @@ class AddTimestampViewController: UIViewController {
             badge.layer.cornerRadius = 8.0
             badge.clipsToBounds = true
             badge.text = String(count);
-            badge.textAlignment = NSTextAlignment.Center
-            badge.textColor = UIColor.whiteColor()
+            badge.textAlignment = NSTextAlignment.center
+            badge.textColor = UIColor.white
             badge.font = UIFont(name: "Helvetica-Bold", size: 12.0)
         
             viewTimestampsButton.addSubview(badge)
         }
-        viewTimestampsButton.addTarget(self, action: #selector(AddTimestampViewController.segueToTableView), forControlEvents: UIControlEvents.TouchUpInside)
+        viewTimestampsButton.addTarget(self, action: #selector(AddTimestampViewController.segueToTableView), for: UIControlEvents.touchUpInside)
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: viewTimestampsButton)
     }

@@ -11,23 +11,23 @@ import Foundation
 let csvFileName = "PatientTimestamper.csv"
 let txtFileName = "dataStore.txt"
 
-func saveToFile(filename: String, contents: String) {
-    if let tmpDir : NSString = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true).first {
-        let path = tmpDir.stringByAppendingPathComponent(filename)
+func saveToFile(_ filename: String, contents: String) {
+    if let tmpDir : NSString = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.allDomainsMask, true).first as NSString? {
+        let path = tmpDir.appendingPathComponent(filename)
         let contentsOfFile = contents
         do {
-            try contentsOfFile.writeToFile(path, atomically: true, encoding: NSUTF8StringEncoding)
+            try contentsOfFile.write(toFile: path, atomically: true, encoding: String.Encoding.utf8)
         } catch {
             print("\(error)")
         }
     }
 }
     
-func loadDataFromFile(filename: String, data: Data) {
-    if let tmpDir : NSString = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true).first {
-        let path = tmpDir.stringByAppendingPathComponent(filename)
+func loadDataFromFile(_ filename: String, data: Data) {
+    if let tmpDir : NSString = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.allDomainsMask, true).first as NSString? {
+        let path = tmpDir.appendingPathComponent(filename)
         do {
-            let txtFromFile = try NSString(contentsOfFile: path, encoding: NSUTF8StringEncoding)
+            let txtFromFile = try NSString(contentsOfFile: path, encoding: String.Encoding.utf8.rawValue)
             data.loadFromTXT(txtFromFile as String)
         } catch {
             print("\(error)")
